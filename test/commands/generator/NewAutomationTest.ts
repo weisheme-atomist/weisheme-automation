@@ -36,15 +36,15 @@ describe("NewAutomation", () => {
     }
 
     it("edits this project", done => {
-        editProject({ team: "T1000", newRepository: "theTargetRepo", owner: "me" })(thisProject())
+        editProject({ team: "T1000", newRepository: "weisheme-automation", owner: "me" })(thisProject())
             .then(pr => {
                 const newPackageJson = JSON.parse(pr.findFileSync("package.json").getContentSync());
-                assert(newPackageJson.name === "theTargetRepo",
-                    `Was [${newPackageJson.name}] expected ["theTargetRepo"]`);
+                assert(newPackageJson.name === "weisheme-automation",
+                    `Was [${newPackageJson.name}] expected ["weisheme-automation"]`);
 
                 const newAtomistConfig = pr.findFileSync("src/atomist.config.ts").getContentSync();
                 assert(newAtomistConfig.includes("T1000"), "Actual content was\n" + newAtomistConfig);
-                assert(pr.findFileSync("README.md").getContentSync().indexOf("theTargetRepo") > 0);
+                assert(pr.findFileSync("README.md").getContentSync().indexOf("weisheme-automation") > 0);
                 done();
             }).catch(done);
     });
@@ -58,11 +58,11 @@ describe("NewAutomation", () => {
         () => new HelloWorld(),
     ],
 }`;
-        editProject({ team: "T1000", newRepository: "theTargetRepo", owner: "me" })(thisProject(config))
+        editProject({ team: "T1000", newRepository: "weisheme-automation", owner: "me" })(thisProject(config))
             .then(pr => {
                 const newPackageJson = JSON.parse(pr.findFileSync("package.json").getContentSync());
-                assert(newPackageJson.name === "theTargetRepo",
-                    `Was [${newPackageJson.name}] expected ["theTargetRepo"]`);
+                assert(newPackageJson.name === "weisheme-automation",
+                    `Was [${newPackageJson.name}] expected ["weisheme-automation"]`);
 
                 const newAtomistConfig = pr.findFileSync("src/atomist.config.ts").getContentSync();
                 assert(newAtomistConfig.includes("T1000"), "Actual content was\n" + newAtomistConfig);
@@ -79,11 +79,11 @@ describe("NewAutomation", () => {
         () => new HelloWorld(),
     ],
 };`;
-        editProject({ team: "T1000", newRepository: "theTargetRepo", owner: "me" })(thisProject(config))
+        editProject({ team: "T1000", newRepository: "weisheme-automation", owner: "me" })(thisProject(config))
             .then(pr => {
                 const newPackageJson = JSON.parse(pr.findFileSync("package.json").getContentSync());
-                assert(newPackageJson.name === "theTargetRepo",
-                    `Was [${newPackageJson.name}] expected ["theTargetRepo"]`);
+                assert(newPackageJson.name === "weisheme-automation",
+                    `Was [${newPackageJson.name}] expected ["weisheme-automation"]`);
 
                 const newAtomistConfig = pr.findFileSync("src/atomist.config.ts").getContentSync();
                 assert(newAtomistConfig.includes("T1000"), "Actual content was\n" + newAtomistConfig);
@@ -100,11 +100,11 @@ describe("NewAutomation", () => {
         () => new HelloWorld(),
     ],
 }`;
-        editProject({ team: "T1000", newRepository: "theTargetRepo", owner: "me" })(thisProject(config))
+        editProject({ team: "T1000", newRepository: "weisheme-automation", owner: "me" })(thisProject(config))
             .then(pr => {
                 const newPackageJson = JSON.parse(pr.findFileSync("package.json").getContentSync());
-                assert(newPackageJson.name === "theTargetRepo",
-                    `Was [${newPackageJson.name}] expected [${"theTargetRepo"}]`);
+                assert(newPackageJson.name === "weisheme-automation",
+                    `Was [${newPackageJson.name}] expected [${"weisheme-automation"}]`);
 
                 const newAtomistConfig = pr.findFileSync("src/atomist.config.ts").getContentSync();
                 assert(newAtomistConfig.includes("T1000"), "Actual content was\n" + newAtomistConfig);
@@ -121,11 +121,11 @@ describe("NewAutomation", () => {
         () => new HelloWorld(),
     ],
 }`;
-        editProject({ team: "T1000", newRepository: "theTargetRepo", owner: "me" })(thisProject(config))
+        editProject({ team: "T1000", newRepository: "weisheme-automation", owner: "me" })(thisProject(config))
             .then(pr => {
                 const newPackageJson = JSON.parse(pr.findFileSync("package.json").getContentSync());
-                assert(newPackageJson.name === "theTargetRepo",
-                    `Was [${newPackageJson.name}] expected [${"theTargetRepo"}]`);
+                assert(newPackageJson.name === "weisheme-automation",
+                    `Was [${newPackageJson.name}] expected [${"weisheme-automation"}]`);
 
                 const newAtomistConfig = pr.findFileSync("src/atomist.config.ts").getContentSync();
                 assert(newAtomistConfig.includes("T1000"), "Actual content was\n" + newAtomistConfig);
